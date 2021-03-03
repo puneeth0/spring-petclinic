@@ -11,7 +11,7 @@ public class PetServiceMap extends AbstractServiceMap<Pet, Long> implements PetS
 	@Override
 	public Pet save(Pet object) {
 		// TODO Auto-generated method stub
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 
 }

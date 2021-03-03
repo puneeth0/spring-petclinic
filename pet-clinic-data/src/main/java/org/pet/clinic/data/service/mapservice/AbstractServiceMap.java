@@ -5,28 +5,42 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class AbstractServiceMap<T, ID> {
-	
-	protected Map<ID,T> map=new HashMap<ID,T>();
-	public Set<T> findall(){	
+import org.pet.clinic.data.model.BaseEntity;
+
+public abstract class AbstractServiceMap<T extends BaseEntity, ID extends Long> {
+
+	protected Map<Long, T> map = new HashMap<Long, T>();
+
+	public Set<T> findall() {
 		return new HashSet<>(map.values());
-}
-	
+	}
+
 	public T findById(ID id) {
 		return map.get(id);
 	}
-	
-	public T save(ID id,T object) {
-		map.put(id, object);
+
+	public T save( T object) {
+		if (object != null) {
+			if (object.getId() == null) {
+				object.setId(getNextId());
+				map.put(object.getId(), object);
+			}
+		}
+
 		return object;
 	}
-	
+
 	public void delete(T object) {
-		map.entrySet().removeIf(entry->entry.getValue().equals(object));
+		map.entrySet().removeIf(entry -> entry.getValue().equals(object));
 	}
-	
+
 	public void deleteById(ID id) {
 		map.remove(id);
 	}
-	
+
+	private Long getNextId() {
+		System.out.println("map.keySet().size() "+map.keySet().size());
+		return (long) (map.keySet().size() + 1);
+	}
+
 }
