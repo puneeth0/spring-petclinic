@@ -5,8 +5,10 @@ import java.util.Set;
 import org.pet.clinic.data.model.Owner;
 import org.pet.clinic.data.service.CrudService;
 import org.pet.clinic.data.service.OwnerService;
+import org.springframework.stereotype.Service;
 
-public class OwnerServiceMap  extends AbstractServiceMap<Owner,Long> implements CrudService<Owner, Long> {
+@Service
+public class OwnerServiceMap  extends AbstractServiceMap<Owner,Long> implements OwnerService {
 
 	@Override
 	public Owner save(Owner object) {
@@ -34,6 +36,12 @@ public class OwnerServiceMap  extends AbstractServiceMap<Owner,Long> implements 
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public Owner findByLastName(String lname) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
  
