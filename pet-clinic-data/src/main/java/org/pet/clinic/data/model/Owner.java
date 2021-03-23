@@ -1,5 +1,7 @@
 package org.pet.clinic.data.model;
 
-public class Owner extends Person{
+import java.util.Set;
 
+public class Owner extends Person{
+	private Set<Pet> pets;
 }

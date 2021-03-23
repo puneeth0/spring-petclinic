@@ -9,8 +9,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Pet extends BaseEntity{
-	private PetType petType;
-	private Owner owner;
-	private LocalDate birthDate;
+public class Visit extends BaseEntity{
+
+	private LocalDate date;
+	private String description;
+	private Pet pet;
 }
