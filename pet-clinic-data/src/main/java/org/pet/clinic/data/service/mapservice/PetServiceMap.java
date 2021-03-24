@@ -7,11 +7,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PetServiceMap extends AbstractServiceMap<Pet, Long> implements PetService{
-
-	@Override
-	public Pet save(Pet object) {
-		// TODO Auto-generated method stub
-		return super.save(object);
-	}
-
+	
 }
