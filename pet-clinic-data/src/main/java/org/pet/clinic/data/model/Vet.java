@@ -1,5 +1,6 @@
 package org.pet.clinic.data.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import lombok.Getter;
@@ -10,5 +11,5 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Vet extends Person {
-	private Set<Speciality> specialities;
+	private Set<Speciality> specialities= new HashSet<Speciality>();
 }

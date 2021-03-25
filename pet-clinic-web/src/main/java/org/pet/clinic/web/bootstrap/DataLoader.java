@@ -1,5 +1,7 @@
 package org.pet.clinic.web.bootstrap;
 
+import java.time.LocalDate;
+
 import org.pet.clinic.data.model.Owner;
 import org.pet.clinic.data.model.Pet;
 import org.pet.clinic.data.model.PetType;
@@ -36,11 +38,31 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Puneeth");
 		owner1.setLastName("Kumar");
+		owner1.setAddress("123 mg road ");
+		owner1.setCity("bangalore");
+		owner1.setTelephone("123456");
+		
+		Pet puneethPet=new Pet();
+		puneethPet.setPetType(savedPetDog);
+		puneethPet.setOwner(owner1);
+		puneethPet.setBirthDate(LocalDate.now());
+		puneethPet.setName("tommy");
+		owner1.getPets().add(puneethPet);
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Ranjith");
 		owner2.setLastName("Kumar");
+		owner2.setAddress("123 mg road ");
+		owner2.setCity("bangalore");
+		owner2.setTelephone("123456");
+		
+		Pet ranjiPet=new Pet();
+		ranjiPet.setPetType(savedPetCat);
+		ranjiPet.setOwner(owner2);
+		ranjiPet.setBirthDate(LocalDate.now());
+		ranjiPet.setName("tony");
+		owner2.getPets().add(ranjiPet);
 		ownerService.save(owner2);
 
 		System.out.println("owner loaded");
