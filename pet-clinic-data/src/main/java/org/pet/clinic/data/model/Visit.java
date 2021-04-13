@@ -8,7 +8,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 public class Visit extends BaseEntity{
 
 	private LocalDate date;
