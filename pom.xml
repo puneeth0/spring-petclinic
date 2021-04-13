@@ -5,7 +5,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.2</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
 	<groupId>com.example.spring</groupId>
@@ -52,5 +52,6 @@
 	<modules>
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
-	</modules>
+    <module>pet-clinic-sample</module>
+  </modules>
 </project>
