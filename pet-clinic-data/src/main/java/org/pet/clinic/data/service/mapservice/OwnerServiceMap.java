@@ -8,6 +8,7 @@ import org.pet.clinic.data.service.CrudService;
 import org.pet.clinic.data.service.OwnerService;
 import org.pet.clinic.data.service.PetService;
 import org.pet.clinic.data.service.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
