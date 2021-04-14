@@ -8,12 +8,11 @@ import org.pet.clinic.data.repository.OwnerRepository;
 import org.pet.clinic.data.repository.PetRepository;
 import org.pet.clinic.data.repository.PetTypeRepository;
 import org.pet.clinic.data.service.OwnerService;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("springdatajpa")
+@Profile("springownerjpa")
 public class OwnerSDJpaService implements OwnerService {
 
 	private final OwnerRepository ownerRepository;
