@@ -9,7 +9,7 @@ import org.pet.clinic.data.service.PetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("springownerjpa")
+@Profile("springdatajpa")
 @Service
 public class PetSDJpaService implements PetService {
 

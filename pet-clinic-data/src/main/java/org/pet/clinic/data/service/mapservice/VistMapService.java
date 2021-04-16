@@ -4,9 +4,11 @@ import java.util.Set;
 
 import org.pet.clinic.data.model.Visit;
 import org.pet.clinic.data.service.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default","mapService"})
 public class VistMapService extends AbstractServiceMap<Visit, Long> implements VisitService {
 
 	@Override

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("springownerjpa")
+@Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
 
 	private final OwnerRepository ownerRepository;

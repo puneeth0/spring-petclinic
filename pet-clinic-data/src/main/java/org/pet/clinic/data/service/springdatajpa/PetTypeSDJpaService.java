@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("springownerjpa")
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService{
 
 	private final PetTypeRepository petTypeRepository;
