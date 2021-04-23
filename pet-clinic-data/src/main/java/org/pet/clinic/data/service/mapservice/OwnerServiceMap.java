@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile({"default","mapService"})
+@Profile({ "default", "mapService" })
 public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService {
 
 	private final PetService petService;
@@ -26,8 +26,9 @@ public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements 
 
 	@Override
 	public Owner findByLastName(String lname) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return this.findall().stream().filter(e -> e.getFirstName().equalsIgnoreCase(lname)).findFirst()
+				.orElseGet(null);
 	}
 
 	@Override

@@ -17,7 +17,10 @@ import org.pet.clinic.data.service.VisitService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class DataLoader implements CommandLineRunner {
 
 	private final VetService vetService;
@@ -37,6 +40,7 @@ public class DataLoader implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		if(petTypeService.findall().size()==0) {
 		dataLoader();
+		log.debug("data loaded");
 		}
 	}
 
