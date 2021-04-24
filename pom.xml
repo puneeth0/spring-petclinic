@@ -52,6 +52,5 @@
 	<modules>
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
-    <module>pet-clinic-sample</module>
   </modules>
 </project>
