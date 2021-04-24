@@ -15,26 +15,24 @@ import org.pet.clinic.data.model.Owner;
 @TestInstance(Lifecycle.PER_CLASS)
 class OwnerServiceMapTest {
 
-	OwnerServiceMap ownerServiceMap;
+	OwnerServiceMap ownerServiceMap ;
 
 	final Long ownerId = 1L;
 	final String lastName = "Smith";
 
+	Owner savedOwner;
+
 	@BeforeEach
 	void setUp() {
 		ownerServiceMap = new OwnerServiceMap(new PetServiceMap(), new PetTypeServiceMap());
-
-		ownerServiceMap.save(Owner.builder().id(ownerId).lastName(lastName).build());
+		savedOwner = ownerServiceMap.save(Owner.builder().id(ownerId).lastName(lastName).build());
 	}
 
 	@Test
 	void findByLastName() {
 		Owner smith = ownerServiceMap.findByLastName(lastName);
-		System.out.println("smith ");
 		assertNotNull(smith);
-
 		assertEquals(ownerId, smith.getId());
-
 	}
 
 	@Test
@@ -59,20 +57,18 @@ class OwnerServiceMapTest {
 
 	@Test
 	void testSaveOwnerWithoutId() {
-		Owner savesOwner = ownerServiceMap.save(Owner.builder().build());
+		Owner savesOwner = ownerServiceMap.save(Owner.builder().id(2L).lastName("puneeth").build());
 		assertNotNull(savesOwner.getId());
 		assertNotNull(savesOwner.getLastName());
 	}
 
 	@Test
-	@Disabled
 	void testDeleteOwner() {
 		ownerServiceMap.delete(ownerServiceMap.findById(ownerId));
 		assertEquals(0, ownerServiceMap.findall().size());
 	}
 
 	@Test
-	@Disabled
 	void testDeleteByIdLong() {
 		ownerServiceMap.deleteById(ownerId);
 		assertEquals(0, ownerServiceMap.findall().size());

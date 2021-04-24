@@ -23,8 +23,8 @@ public abstract class AbstractServiceMap<T extends BaseEntity, ID extends Long> 
 		if (object != null) {
 			if (object.getId() == null) {
 				object.setId(getNextId());
-				map.put(object.getId(), object);
 			}
+			map.put(object.getId(), object);
 		}
 
 		return object;
@@ -39,7 +39,6 @@ public abstract class AbstractServiceMap<T extends BaseEntity, ID extends Long> 
 	}
 
 	private Long getNextId() {
-		System.out.println("map.keySet().size() "+map.keySet().size());
 		return (long) (map.keySet().size() + 1);
 	}
 
